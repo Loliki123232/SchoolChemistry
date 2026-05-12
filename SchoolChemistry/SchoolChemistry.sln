@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolChemistry", "SchoolChemistry.csproj", "{C266732D-E6E8-476F-BDAF-2AB638B19690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolChemistry.Tests", "..\SchoolChemistry.Tests\SchoolChemistry.Tests.csproj", "{4EC6E943-17BD-4D88-A8F5-0A1A81382CFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C266732D-E6E8-476F-BDAF-2AB638B19690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C266732D-E6E8-476F-BDAF-2AB638B19690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C266732D-E6E8-476F-BDAF-2AB638B19690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C266732D-E6E8-476F-BDAF-2AB638B19690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EC6E943-17BD-4D88-A8F5-0A1A81382CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EC6E943-17BD-4D88-A8F5-0A1A81382CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EC6E943-17BD-4D88-A8F5-0A1A81382CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EC6E943-17BD-4D88-A8F5-0A1A81382CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7491E046-71CC-46CF-92A4-AA58D99C38AA}
+	EndGlobalSection
+EndGlobal

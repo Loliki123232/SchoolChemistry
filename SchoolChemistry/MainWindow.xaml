@@ -1,0 +1,71 @@
+﻿<Window x:Class="SchoolChemistry.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:SchoolChemistry.ViewModels"
+        xmlns:views="clr-namespace:SchoolChemistry.Views"
+        Title="Химия: школьный помощник" 
+        Height="600" 
+        Width="900">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Боковое меню -->
+        <Border Grid.Column="0" Background="#2C3E50">
+            <StackPanel Margin="10">
+                <TextBlock Text="📚 Темы" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+                <ItemsControl ItemsSource="{Binding Themes}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Name}" 
+                                    Command="{Binding DataContext.SelectThemeCommand, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                    CommandParameter="{Binding}"
+                                    Background="Transparent" 
+                                    Foreground="White" 
+                                    BorderThickness="0" 
+                                    Padding="10,8" 
+                                    Cursor="Hand"
+                                    HorizontalAlignment="Stretch"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <Separator Margin="0,15,0,15" Background="Gray"/>
+                <Button Content="📖 Периодическая таблица" 
+                        Command="{Binding ShowPeriodicTableCommand}"
+                        Background="Transparent" 
+                        Foreground="White" 
+                        BorderThickness="0" 
+                        Padding="10,8" 
+                        Cursor="Hand"
+                        HorizontalAlignment="Stretch"/>
+
+                <Separator Margin="0,15,0,15"/>
+                <StackPanel>
+                    <TextBlock Text="🔍 Поиск элемента" Foreground="White"/>
+                    <TextBox Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,5"/>
+                    <Button Content="Найти" 
+                            Command="{Binding SearchElementCommand}"
+                            Background="Transparent" 
+                            Foreground="White" 
+                            BorderThickness="0" 
+                            Padding="10,8" 
+                            Cursor="Hand"
+                            HorizontalAlignment="Stretch"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Область контента -->
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <ContentControl Content="{Binding CurrentContent}"/>
+        </ScrollViewer>
+    </Grid>
+</Window>

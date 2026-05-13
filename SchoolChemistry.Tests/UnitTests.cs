@@ -7,7 +7,7 @@ namespace SchoolChemistry.Tests
     public class UnitTests
     {
         /// <summary>
-        /// Тест 1: Проверка создания модели Theme
+        /// РўРµСЃС‚ 1: РџСЂРѕРІРµСЂРєР° СЃРѕР·РґР°РЅРёСЏ РјРѕРґРµР»Рё Theme
         /// </summary>
         [Fact]
         public void Test1_ThemeModel_ShouldCreateCorrectly()
@@ -16,18 +16,18 @@ namespace SchoolChemistry.Tests
             var theme = new Theme
             {
                 Id = 1,
-                Name = "Тестовая тема",
-                Content = "Тестовое содержимое"
+                Name = "РўРµСЃС‚РѕРІР°СЏ С‚РµРјР°",
+                Content = "РўРµСЃС‚РѕРІРѕРµ СЃРѕРґРµСЂР¶РёРјРѕРµ"
             };
 
             // Assert
             Assert.Equal(1, theme.Id);
-            Assert.Equal("Тестовая тема", theme.Name);
-            Assert.Equal("Тестовое содержимое", theme.Content);
+            Assert.Equal("РўРµСЃС‚РѕРІР°СЏ С‚РµРјР°", theme.Name);
+            Assert.Equal("РўРµСЃС‚РѕРІРѕРµ СЃРѕРґРµСЂР¶РёРјРѕРµ", theme.Content);
         }
 
         /// <summary>
-        /// Тест 2: Проверка создания модели ChemicalElement
+        /// РўРµСЃС‚ 2: РџСЂРѕРІРµСЂРєР° СЃРѕР·РґР°РЅРёСЏ РјРѕРґРµР»Рё ChemicalElement
         /// </summary>
         [Fact]
         public void Test2_ChemicalElementModel_ShouldCreateCorrectly()
@@ -37,23 +37,23 @@ namespace SchoolChemistry.Tests
             {
                 Id = 1,
                 Symbol = "H",
-                Name = "Водород",
+                Name = "Р’РѕРґРѕСЂРѕРґ",
                 AtomicNumber = 1,
                 AtomicMass = 1.008m,
                 GroupNumber = 1,
                 Period = 1,
-                Description = "Самый лёгкий элемент"
+                Description = "РЎР°РјС‹Р№ Р»С‘РіРєРёР№ СЌР»РµРјРµРЅС‚"
             };
 
             // Assert
             Assert.Equal(1, element.AtomicNumber);
             Assert.Equal("H", element.Symbol);
-            Assert.Equal("Водород", element.Name);
+            Assert.Equal("Р’РѕРґРѕСЂРѕРґ", element.Name);
             Assert.Equal(1.008m, element.AtomicMass);
         }
 
         /// <summary>
-        /// Тест 3: Проверка выполнения команды RelayCommand
+        /// РўРµСЃС‚ 3: РџСЂРѕРІРµСЂРєР° РІС‹РїРѕР»РЅРµРЅРёСЏ РєРѕРјР°РЅРґС‹ RelayCommand
         /// </summary>
         [Fact]
         public void Test3_RelayCommand_ExecuteAndCanExecute_ShouldWorkCorrectly()
@@ -71,7 +71,7 @@ namespace SchoolChemistry.Tests
                 canExecute: (param) => param != null
             );
 
-            // Assert - проверка CanExecute
+            // Assert - РїСЂРѕРІРµСЂРєР° CanExecute
             Assert.False(command.CanExecute(null));
             Assert.True(command.CanExecute("test"));
 
@@ -84,7 +84,7 @@ namespace SchoolChemistry.Tests
         }
 
         /// <summary>
-        /// Тест 4: Проверка свойств Theme (дополнительный)
+        /// РўРµСЃС‚ 4: РџСЂРѕРІРµСЂРєР° СЃРІРѕР№СЃС‚РІ Theme (РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Р№)
         /// </summary>
         [Fact]
         public void Test4_ThemeProperties_ShouldWorkCorrectly()
@@ -94,13 +94,13 @@ namespace SchoolChemistry.Tests
 
             // Act
             theme.Id = 5;
-            theme.Name = "Химические элементы";
-            theme.Content = "Содержимое темы";
+            theme.Name = "РҐРёРјРёС‡РµСЃРєРёРµ СЌР»РµРјРµРЅС‚С‹";
+            theme.Content = "РЎРѕРґРµСЂР¶РёРјРѕРµ С‚РµРјС‹";
 
             // Assert
             Assert.Equal(5, theme.Id);
-            Assert.Equal("Химические элементы", theme.Name);
-            Assert.Equal("Содержимое темы", theme.Content);
+            Assert.Equal("РҐРёРјРёС‡РµСЃРєРёРµ СЌР»РµРјРµРЅС‚С‹", theme.Name);
+            Assert.Equal("РЎРѕРґРµСЂР¶РёРјРѕРµ С‚РµРјС‹", theme.Content);
             Assert.IsType<int>(theme.Id);
             Assert.IsType<string>(theme.Name);
         }
